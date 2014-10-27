@@ -1,0 +1,20 @@
+{
+  "name": "dateplus",
+  "version": "0.1.0",
+  "description": "easy to modify date",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p2world/dateplus.git"
+  },
+  "keywords": [
+    "date",
+    "lib"
+  ],
+  "author": "p2world",
+  "bugs": {
+    "url": "https://github.com/p2world/dateplus/issues"
+  }
+}
