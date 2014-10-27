@@ -84,3 +84,24 @@ var names={
 	S:"Milliseconds"
 };
 ```
+
+## parseCN
+* get a Date instance by splited number string
+* only for order by `year month day hour minute second microsecond`
+* set the rest to 0
+
+```javascript
+// 2000-1-1 0:0:0:000
+Date.parseCN('2000');
+
+// 2000-2-1 0:0:0:000
+Date.parseCN('2000 2');
+
+// 2000-2-3 0:0:0:000
+Date.parseCN('2000 2 3');
+
+// every spliter are ok!
+// 2000-2-1 0:0:0:000
+Date.parseCN('2000|2');
+
+```
