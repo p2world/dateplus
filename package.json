@@ -1,7 +1,7 @@
 {
   "name": "dateplus",
   "version": "0.1.1",
-  "description": "easy to modify date",
+  "description": "just easy to modify date",
   "scripts": {
     "test": "node test.js"
   },
@@ -11,6 +11,14 @@
   },
   "keywords": [
     "date",
+    "time",
+    "math",
+    "util",
+    "parse",
+    "format",
+    "easy",
+    "simple",
+    "graceful",
     "lib"
   ],
   "author": "p2world",

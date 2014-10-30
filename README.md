@@ -69,7 +69,7 @@ var d3=d.clone().y(2014).m(10).d(27).h(15).M(2);
 6. second
 7. microsecond
 
-#### rule
+#### unit name rule
 * small unit Upper case (month Minute) (second microSecond)
 
 ```javascript
@@ -83,6 +83,28 @@ var names={
 	s:"Seconds",
 	S:"Milliseconds"
 };
+```
+
+## math
+* bigest unit is *day*
+
+```javascript
+var a=Date.parseCN('2000 2 3');
+var b=Date.parseCN('2000 2 2')
+
+// means a - b = ?d
+a.d(b);// 1
+
+
+// also works
+var a=Date.parseCN('2000 2 3 00:00');
+var b=Date.parseCN('2000 2 2 12:00')
+
+a.d(b);// 0.5
+a.h(b);// 12
+a.M(b);// 720
+a.s(b);// 43200
+a.S(b);// 43200000
 ```
 
 ## parseCN

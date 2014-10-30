@@ -12,41 +12,64 @@ var names={
 	S:"Milliseconds"
 };
 
-var marco=['',
+
+
+
+
+var marco=[
 	'var old=this.getXXX();',
 	'if(arguments.length){',
-		'//throw new Error("can`t set week");',
-		'var re=/^([+-]?)(\\d+)$/.exec(""+value);',
-		'if(re){',
-			'value=Number(value);',
-			'if(re[1]){',
-				'value+=old;',
-			'}else{',
-				'//value--;',
-			'}',
+		'if(value instanceof Date){',
+			'//throw new Error("only math by S,s,M,h,d");',
+			'// math relative to',
+			'var d=this.getTime()-value.getTime();',
+			'return d/YYY;',
 		'}else{',
-			'throw new Error("arg must be number");',
+			'// set a unit',
+			'//throw new Error("can`t set week");',
+			'var re=/^([+-]?)(\\d+)$/.exec(""+value);',
+			'if(re){',
+				'value=Number(value);',
+				'if(re[1]){',
+					'value+=old;',
+				'}else{',
+					'//value--;',
+				'}',
+			'}else{',
+				'throw new Error("arg must be number");',
+			'}',
+			'this.setXXX(value);',
+			'return this;',
 		'}',
-		'this.setXXX(value);',
-		'return this;',
 	'}else{',
 		'//old++;',
 		'return old;',
-	'}',
-''];
+	'}'
+];
 function makeExe(arr,index){
 	arr[index]=arr[index].slice(2);
 }
+var carrys={
+	S:1,
+	s:1000,
+	M:60*1000,
+	h:60*60*1000,
+	d:24*60*60*1000
+};
 for(var c in names){
+	var carry=carrys[c];
 	var longName=names[c];
 	var tmarco=marco.slice(0);
-	if(c==='w'){
+	if(!carry){
 		makeExe(tmarco,3);
-	}else if(c==='m'){
-		makeExe(tmarco,10);
-		makeExe(tmarco,18);
 	}
-	proto[c]=new Function('value',tmarco.join('\n').replace(/XXX/g,longName));
+	if(c==='w'){
+		makeExe(tmarco,9);
+	}else if(c==='m'){
+		makeExe(tmarco,16);
+		makeExe(tmarco,25);
+	}
+	proto[c]=new Function('value',tmarco.join('\n').replace(/XXX/g,longName).replace(/YYY/g,carry));
 }
 
 proto.t=function() {

@@ -89,3 +89,11 @@ for (var i = 0; i < values.length; i++) {
 
 assert(new Date(2000,0,1).h(5).M(2).format('yyyy-mm-dd hh:MM:ss:SSS'),"2000-01-01 05:02:00:000");
 assert(Date.parseCN('2014/1-2 12- 00').format(),'2014-01-02 12:00');
+
+var a=Date.parseCN('2000 2 3 00:00');
+var b=Date.parseCN('2000 2 2 12:00');
+assert(a.d(b),0.5);
+assert(a.h(b),12);
+assert(a.M(b),720);
+assert(a.s(b),43200);
+assert(a.S(b),43200000);
