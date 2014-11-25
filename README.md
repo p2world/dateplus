@@ -2,6 +2,10 @@
 ## NOTE
 this lib add some function on `Date`'s prototype
 
+## supports
+* ie8+
+* nodejs
+
 ## Examples
 ```javascript
 require('dateplus');

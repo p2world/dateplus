@@ -1,6 +1,6 @@
 {
   "name": "dateplus",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "just easy to modify date",
   "scripts": {
     "test": "node test.js"
@@ -21,8 +21,30 @@
     "graceful",
     "lib"
   ],
-  "author": "p2world",
+  "author": {
+    "name": "p2world"
+  },
   "bugs": {
     "url": "https://github.com/p2world/dateplus/issues"
-  }
+  },
+  "_id": "dateplus@0.2.0",
+  "dist": {
+    "shasum": "4e00e56be678b021d65498dbf614ba52185f42cd",
+    "tarball": "http://registry.npmjs.org/dateplus/-/dateplus-0.2.0.tgz"
+  },
+  "_from": "dateplus@",
+  "_npmVersion": "1.3.11",
+  "_npmUser": {
+    "name": "p2world",
+    "email": "p2world@163.com"
+  },
+  "maintainers": [
+    {
+      "name": "p2world",
+      "email": "p2world@163.com"
+    }
+  ],
+  "directories": {},
+  "_shasum": "4e00e56be678b021d65498dbf614ba52185f42cd",
+  "_resolved": "https://registry.npmjs.org/dateplus/-/dateplus-0.2.0.tgz"
 }
